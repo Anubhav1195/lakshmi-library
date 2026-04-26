@@ -197,46 +197,87 @@
 
   <div class="container">
 
-    <h2 class="main-title">Laxmi Digital Library</h2>
-    <div class="slider">
-      <div class="slider-track">
-        <img src="library1.jpeg" alt="Library Photo 1" />
-        <img src="library2.jpeg" alt="Library Photo 2" />
-        <img src="library3.jpeg" alt="Library Photo 3" />
-          <img src="library4.jpeg" alt="Library Photo 4" />
-      </div>
-    </div>
-     <div class="content-wrapper" style="display:flex; flex-direction:column; gap:30px; align-items:center; justify-content:center;">
+    <h1 class="main-title">Laxmi Digital Library</h1>
+
+    <div class="content-wrapper" style="display:flex; flex-direction:column; gap:30px; align-items:center; justify-content:center;">
 
       <div class="facilities" style="width:100%; max-width:700px; text-align:left; background:linear-gradient(135deg, #f8fbff, #eef5ff); padding:25px; border-radius:16px; border:2px solid #d6e4ff; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
         <div style="background:#1f3c88; color:white; padding:12px 18px; border-radius:12px; text-align:center; margin-bottom:20px; box-shadow:0 4px 10px rgba(31,60,136,0.2);">
-          <h2 style="margin:0; font-size:24px; letter-spacing:1px;">✨Premium Facilities✨</h2>
+          <h2 style="margin:0; font-size:24px; letter-spacing:1px;">✨ Premium Facilities ✨</h2>
         </div>
         
         <ul style="padding-left:20px; line-height:2; color:#444; font-size:16px;">
           <li><strong>Peaceful Study Environment</strong></li>
-            <li><strong>Separate Room for Girls</strong></li>
-             <li><strong>CCTV Security</strong></li>
-             <li><strong>Jan Suvidha Kendra</strong></li>
           <li><strong>Wi-Fi Facility</strong></li>
           <li><strong>Comfortable Seating Arrangement</strong></li>
           <li><strong>Drinking Water Facility</strong></li>
           <li><strong>Power Backup</strong></li>
+          <li><strong>CCTV Security</strong></li>
+          <li><strong>Separate Reading Zone</strong></li>
+          <li><strong>Separate Room for Girls</strong></li>
         </ul>
       </div>
-        <div class="fee-section">
-      <h2>Monthly Student Fee</h2>
-      <h3 style="margin-top:10px; color:#1f3c88;">Fees / Month: ₹750</h3>
+
+      <div class="slider">
+      <div class="slider-track">
+        <img src="library1.jpeg" alt="Library Photo 1" />
+        <img src="library2.jpeg" alt="Library Photo 2" />
+        <img src="library3.jpeg" alt="Library Photo 3" />
+      </div>
     </div>
-      <a href="https://wa.me/916387837459" target="_blank" class="whatsapp-btn">
-      Contact on WhatsApp
-    </a>
+
     <p><strong>Address:</strong> New Bypass Gola</p>
     <p><strong>Contact:</strong> 6387837459</p>
 
-   
+    <a href="https://wa.me/916387837459" target="_blank" class="whatsapp-btn">
+      Contact on WhatsApp
+    </a>
+
+    <div class="enquiry-form" style="margin-top:40px; background:#f8fbff; padding:30px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:left; max-width:700px; margin-left:auto; margin-right:auto;">
+      <h2 style="text-align:center; color:#1f3c88; margin-bottom:25px;">Student Enquiry Form</h2>
+
+      <form onsubmit="sendToWhatsApp(); return false;">
+        <input id="name" type="text" placeholder="Full Name" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:10px;">
+
+        <input id="mobile" type="text" placeholder="Mobile Number" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:10px;">
+
+        <input id="course" type="text" placeholder="Class / Course" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:10px;">
+
+        <select id="timing" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:10px;">
+          <option value="">Select Study Timing</option>
+          <option>Morning</option>
+          <option>Evening</option>
+          <option>Full Day</option>
+        </select>
+
+        <textarea id="address" placeholder="Address" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:10px; height:100px;"></textarea>
+
+        <button type="submit" style="width:100%; padding:14px; background:#1f3c88; color:white; border:none; border-radius:10px; font-size:18px; font-weight:bold; cursor:pointer;">
+          Submit Enquiry
+        </button>
+      </form>
+    </div>
+
+    <div class="fee-section">
+      <h2>Monthly Student Fee</h2>
+      <h3 style="margin-top:10px; color:#1f3c88;">Fees / Month: ₹750</h3>
+    </div>
 
   </div>
 
+  <script>
+    function sendToWhatsApp() {
+      let name = document.getElementById('name').value;
+      let mobile = document.getElementById('mobile').value;
+      let course = document.getElementById('course').value;
+      let timing = document.getElementById('timing').value;
+      let address = document.getElementById('address').value;
+
+      let message = `New Library Enquiry:%0A%0AName: ${name}%0AMobile: ${mobile}%0ACourse: ${course}%0ATiming: ${timing}%0AAddress: ${address}`;
+
+      alert('Form Submitted Successfully!');
+      window.open(`https://wa.me/916387837459?text=${message}`, '_blank');
+    }
+  </script>
 </body>
 </html>
