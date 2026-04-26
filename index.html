@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>लक्ष्मी डिजिटल लाइब्रेरी</title>
     <style>
+        .slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
         body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #dfe9f3, #ffffff);
@@ -79,10 +101,10 @@
 <body>
     <div class="container">
         <h1>Laxmi Digital Library</h1>
-       <div style="display:flex; justify-content:center; gap:15px; margin-top:20px; flex-wrap:wrap;">
-    <img src="library1.jpeg" alt="Library Photo 1" style="width:30%; border-radius:10px;">
-    <img src="library2.jpeg" alt="Library Photo 2" style="width:30%; border-radius:10px;">
-    <img src="library3.jpeg" alt="Library Photo 3" style="width:30%; border-radius:10px;">
+     <div class="slider">
+    <img src="library1.jpeg" class="slide active" alt="Library Photo 1">
+    <img src="library2.jpeg" class="slide" alt="Library Photo 2">
+    <img src="library3.jpeg" class="slide" alt="Library Photo 3">
 </div>
         <p><strong>Address:</strong>New Bypass Gola</p>
         <p><strong>Contact:</strong> 638787459</p>
@@ -95,5 +117,25 @@
             <input type="number" placeholder="राशि दर्ज करें">
         </div>
     </div>
+    <script>
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function showSlides() {
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        index++;
+        if (index > slides.length) {
+            index = 1;
+        }
+
+        slides[index - 1].classList.add("active");
+    }
+
+    showSlides();
+    setInterval(showSlides, 3000);
+</script>
 </body>
 </html>
