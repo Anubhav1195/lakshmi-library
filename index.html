@@ -1,189 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>लक्ष्मी डिजिटल लाइब्रेरी</title>
-    <style>
-        .slider {
-    width: 100%;
-    max-width: 900px;
-    height: 300px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 12px;
-    position: relative;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>लक्ष्मी डिजिटल लाइब्रेरी</title>
 
-.slider-track {
-    display: flex;
-    width: 300%;
-    animation: slideMove 12s infinite;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.slider-track img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 12px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      padding: 20px;
+    }
 
-@keyframes slideMove {
-    0% {
+    .container {
+      max-width: 950px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    /* Attractive Main Heading */
+    .main-title {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #1f3c88;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: glowText 3s infinite alternate;
+    }
+
+    @keyframes glowText {
+      0% {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(31,60,136,0.2);
+      }
+      100% {
+        transform: scale(1.03);
+        text-shadow: 0 0 18px rgba(31,60,136,0.35);
+      }
+    }
+
+    /* Slider */
+    .slider {
+      width: 100%;
+      max-width: 850px;
+      height: 380px;
+      margin: 25px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .slider-track {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slideMove 12s infinite;
+    }
+
+    .slider-track img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @keyframes slideMove {
+      0%, 28% {
         transform: translateX(0%);
-    }
-    33% {
+      }
+
+      33%, 61% {
+        transform: translateX(-100%);
+      }
+
+      66%, 94% {
+        transform: translateX(-200%);
+      }
+
+      100% {
         transform: translateX(0%);
+      }
     }
-    38% {
-        transform: translateX(-100%);
+
+    p {
+      font-size: 18px;
+      margin: 12px 0;
+      color: #444;
     }
-    66% {
-        transform: translateX(-100%);
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s ease;
     }
-    71% {
-        transform: translateX(-200%);
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
     }
-    100% {
-        transform: translateX(-200%);
+
+    .fee-section {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
     }
-}
-        .slider {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 300px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 15px;
-}
 
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
+    .fee-section h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
 
-.slide.active {
-    opacity: 1;
-}
-        body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #dfe9f3, #ffffff);
-    margin: 0;
-    padding: 0;
-}
+    .fee-section input {
+      width: 180px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    text-align: center;
-}
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 30px;
+      }
 
-.whatsapp-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-}
+      .slider {
+        height: 260px;
+      }
 
-.whatsapp-btn:hover {
-    opacity: 0.9;
-}
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #555;
-            margin: 10px 0;
-        }
-        .library-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .fee-section {
-            margin-top: 30px;
-        }
-        .fee-section input {
-            width: 100px;
-            padding: 8px;
-            margin-top: 10px;
-        }
-    </style>
+      .slider-track img {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Laxmi Digital Library</h1>
-     <h1>लक्ष्मी डिजिटल लाइब्रेरी</h1>
 
-<div class="slider">
-    <div class="slider-track">
-        <img src="library1.jpeg" alt="Library Photo 1">
-        <img src="library2.jpeg" alt="Library Photo 2">
-        <img src="library3.jpeg" alt="Library Photo 3">
+  <div class="container">
+
+    <h1 class="main-title">लक्ष्मी डिजिटल लाइब्रेरी</h1>
+
+    <div class="slider">
+      <div class="slider-track">
+        <img src="library1.jpeg" alt="Library Photo 1" />
+        <img src="library2.jpeg" alt="Library Photo 2" />
+        <img src="library3.jpeg" alt="Library Photo 3" />
+      </div>
     </div>
-</div>
-        <p><strong>Address:</strong>New Bypass Gola</p>
-        <p><strong>Contact:</strong> 638787459</p>
-           <a href="https://wa.me/916387837459" target="_blank" class="whatsapp-btn">
-        Contact
+
+    <p><strong>Address:</strong> New Bypass Gola</p>
+    <p><strong>Contact:</strong> 6387837459</p>
+
+    <a href="https://wa.me/916387837459" target="_blank" class="whatsapp-btn">
+      WhatsApp पर संपर्क करें
     </a>
-        <div class="fee-section">
-            <h2>Fees</h2>
-            <label>Fees/Month: ₹</label>
-            <input type="number" placeholder="राशि दर्ज करें">
-        </div>
+
+    <div class="fee-section">
+      <h2>बच्चों की मासिक फीस</h2>
+      <label>Fees / Month: ₹ </label>
+      <input type="number" placeholder="राशि दर्ज करें" />
     </div>
-    <script>
-    let slides = document.querySelectorAll(".slide");
-    let index = 0;
 
-    function showSlides() {
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
+  </div>
 
-        index++;
-        if (index > slides.length) {
-            index = 1;
-        }
-
-        slides[index - 1].classList.add("active");
-    }
-
-    showSlides();
-    setInterval(showSlides, 3000);
-</script>
 </body>
 </html>
