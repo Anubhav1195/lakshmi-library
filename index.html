@@ -6,6 +6,30 @@
   <title>Laxmi Digital Library</title>
 
   <style>
+    .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;   /* mobile pe next line me aa jayega */
+  gap: 25px;         /* desktop spacing */
+  text-align: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;       /* apne theme ke hisab se change kar sakte ho */
+  font-size: 16px;
+}
+
+/* 📱 Mobile adjustment */
+@media (max-width: 600px) {
+  .footer-links {
+    gap: 12px;       /* mobile me spacing kam */
+  }
+
+  .footer-links a {
+    font-size: 14px;  /* mobile text thoda small */
+  }
+}
     .office-address {
     background: #ffffff;
     padding: 30px 20px;
@@ -365,15 +389,17 @@
 <p><strong>Contact:</strong> 6387837459</p>
    </div>
     <div class="footer">
-    <p>Copyright © 2024 - 2026 | Laxmi Digital Library</p>
+    <p>Copyright © 2024 - 2026                  |                 Laxmi Digital Library</p>
 
     <p>Laxmi Digital Library™ (Since 1 August 2024)</p>
 
     <p>
-        <a href="#">Home</a>                 |
-        <a href="#">Contact</a>                  |
-        <a href="#">Privacy Policy</a>                |
-        <a href="#">Disclaimer</a>
+     <nav class="footer-links">
+  <a href="#">Home</a>
+  <a href="#">Contact</a>
+  <a href="#">Privacy Policy</a>
+  <a href="#">Disclaimer</a>
+</nav>
     </p>
 </div>
 </body>
